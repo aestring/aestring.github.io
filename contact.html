@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Dark Website - Contact Page</title>
+    <style>
+        body {
+            background-color: #111;
+            color: #fff;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label, input, textarea, button {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #00f;
+        }
+
+        button {
+            background-color: #00f;
+            color: #fff;
+            padding: 8px 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #004;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Contact Us</h1>
+
+    <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <a href="index.html">Back to Main Page</a>
+    <br>
+    <a href="project.html">Visit Project Page</a>
+
+</body>
+</html>
