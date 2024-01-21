@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enter Password for Admin Panel</title>
+    <title>Enter Password For Admin Panel</title>
     <style>
+        
        body {
             background-color: #000000;
             color: #fff;
@@ -13,23 +14,27 @@
         a {
             color: #00f;
         }
-    </style>
     
+    </style>
     <script>
-        function checkPassword() {
-            // Change this to your desired password
-            var correctPassword = "Dani@rblx1";
+        var correctPassword = "Dani@rblx1";
+        var attempts = 0;
 
-            // Get the value entered in the password input field
+        function checkPassword() {
             var enteredPassword = document.getElementById("password").value;
 
-            // Check if the entered password is correct
             if (enteredPassword === correctPassword) {
-                // Redirect to the specified URL
                 window.location.href = "https://aestring.github.io/0panel.html";
             } else {
-                // Display an error message (optional)
-                alert("Incorrect password. Please try again.");
+                attempts++;
+                alert("Incorrect password. Attempts left: " + (3 - attempts));
+
+                if (attempts >= 3) {
+                    // Lock the account after three failed attempts
+                    document.getElementById("password").disabled = true;
+                    document.getElementById("submitBtn").disabled = true;
+                    alert("Account locked. Please contact support here bulgarianspeak-aestring-xyz@abv.bg.");
+                }
             }
         }
     </script>
@@ -38,10 +43,9 @@
     <h1>Password Protected Page</h1>
     <p>Please enter the password to proceed to the ADMIN PANEL. Hint: ....@....1</p>
 
-    <!-- Password input field -->
     <input type="password" id="password" placeholder="Enter password">
 
     <!-- Button to trigger the password check -->
-    <button onclick="checkPassword()">Submit</button>
+    <button id="submitBtn" onclick="checkPassword()">Submit</button>
 </body>
 </html>
