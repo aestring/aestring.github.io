@@ -4,55 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sandbox Game</title>
-  <style>
-    #sandbox {
-      width: 400px;
-      height: 400px;
-      border: 1px solid black;
-    }
-
-    .block {
-      width: 40px;
-      height: 40px;
-      background-color: gray;
-      position: absolute;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div id="sandbox"></div>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const sandbox = document.getElementById("sandbox");
-      let isMouseDown = false;
-
-      sandbox.addEventListener("mousedown", function(event) {
-        isMouseDown = true;
-        createBlock(event);
-      });
-
-      sandbox.addEventListener("mouseup", function() {
-        isMouseDown = false;
-      });
-
-      sandbox.addEventListener("mousemove", function(event) {
-        if (isMouseDown) {
-          createBlock(event);
-        }
-      });
-
-      function createBlock(event) {
-        const block = document.createElement("div");
-        block.classList.add("block");
-        block.style.left = (event.clientX - sandbox.offsetLeft) + "px";
-        block.style.top = (event.clientY - sandbox.offsetTop) + "px";
-        sandbox.appendChild(block);
-
-        block.addEventListener("mousedown", function() {
-          sandbox.removeChild(block);
-        });
-      }
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
