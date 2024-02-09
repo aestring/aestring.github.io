@@ -1,31 +1,32 @@
 document.addEventListener("DOMContentLoaded", function() {
-  const sandbox = document.getElementById("sandbox");
-  let isMouseDown = false;
+  const canvas = document.getElementById("paintCanvas");
+  const context = canvas.getContext("2d");
+  let painting = false;
 
-  sandbox.addEventListener("mousedown", function(event) {
-    isMouseDown = true;
-    createBlock(event);
-  });
+  canvas.addEventListener("mousedown", startPosition);
+  canvas.addEventListener("mouseup", endPosition);
+  canvas.addEventListener("mousemove", draw);
 
-  sandbox.addEventListener("mouseup", function() {
-    isMouseDown = false;
-  });
+  function startPosition(event) {
+    painting = true;
+    draw(event);
+  }
 
-  sandbox.addEventListener("mousemove", function(event) {
-    if (isMouseDown) {
-      createBlock(event);
-    }
-  });
+  function endPosition() {
+    painting = false;
+    context.beginPath();
+  }
 
-  function createBlock(event) {
-    const block = document.createElement("div");
-    block.classList.add("block");
-    block.style.left = (event.clientX - sandbox.offsetLeft) + "px";
-    block.style.top = (event.clientY - sandbox.offsetTop) + "px";
-    sandbox.appendChild(block);
+  function draw(event) {
+    if (!painting) return;
 
-    block.addEventListener("mousedown", function() {
-      sandbox.removeChild(block);
-    });
+    context.lineWidth = 5;
+    context.lineCap = "round";
+    context.strokeStyle = "black";
+
+    context.lineTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+    context.stroke();
+    context.beginPath();
+    context.moveTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
   }
 });
