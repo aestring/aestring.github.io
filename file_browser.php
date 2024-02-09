@@ -8,7 +8,7 @@
     <ul>
         <?php
         // Directory to browse
-        $directory = './';
+        $directory = '/';
 
         // Get all files and directories within the specified directory
         $files = scandir($directory);
