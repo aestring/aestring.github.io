@@ -1,58 +1,135 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="My%20Website_files/styles.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <title>aestring.xyz</title>
-    <style>
-       body {
-            background-color: #000000;
-            color: #fff;
-        }
-
-        a {
-            color: #00f;
-        }
-    </style>
-       
-    
-  </head>
-
-<body>
-  
-    <div id="nav" style="text-align: center;">
-      <img src="images/200w.gif" alt="Beautiful Landscape">
-      <br>
-      <p class="big">Welcome to aestring's website, click an option to begin</p>
-      <br>
-       <a href="project.html">Visit Project Page</a>
-    <a href="downloads.html">Visit Downloads Page</a>
-    <a href="contact.html">Contact Us</a>
-    </div>
-    <div id="content">
-       
-    </div>
-
-<script src="code/code.js"></script>
-</body>
-
-  
-  <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>a</title>
-  <script>
-    document.addEventListener('keydown', function(event) {
-      // Check if Ctrl (key code 17) and '0' (key code 48) are pressed simultaneously
-      if (event.ctrlKey && event.keyCode === 48) {
-        // Redirect to the specified URL
-         window.location.href = 'https://bit.ly/4b5D8I1'; // Replace with your desired URL
-      }
-    });
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Website</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
 
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+
+        header {
+            background: #000000;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .hero {
+            background: #f4f4f4;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #000000;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #555;
+        }
+
+        .features {
+            padding: 50px 0;
+        }
+
+        .features h2 {
+            margin-bottom: 20px;
+        }
+
+        .feature {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h1>Modern Website</h1>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="container">
+            <h2>Welcome to Our Website</h2>
+            <p>We offer modern solutions for all your needs.</p>
+            <a href="#" class="btn">Learn More</a>
+        </div>
+    </section>
+    <section class="features">
+        <div class="container">
+            <h2>Our Features</h2>
+            <div class="feature">
+                <h3>Feature 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="feature">
+                <h3>Feature 2</h3>
+                <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="feature">
+                <h3>Feature 3</h3>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Modern Website. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
